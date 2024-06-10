@@ -1,4 +1,12 @@
 
+# 0.0.5 [06-10-2024]
+
+Update main_action.yml for promote stage
+See commit 352d85f
+
+2024-06-10 12:24:21 -0500
+
+---
 # 0.0.4 [06-10-2024]
 
 Merge pull request #2 from test-organization-calloway/minor_2024-06-10T11-38-14
