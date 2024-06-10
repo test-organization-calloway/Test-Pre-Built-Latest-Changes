@@ -1,4 +1,15 @@
 
+# 0.0.4 [06-10-2024]
+
+Merge pull request #2 from test-organization-calloway/minor_2024-06-10T11-38-14
+
+pullRequest2024-06-10T11-38-14
+Adds Test Workflow to Pre-Built.
+See commit ce0b80c
+
+2024-06-10 12:08:41 -0500
+
+---
 # 0.0.3 [06-10-2024]
 
 Merge pull request #1 from test-organization-calloway/minor_2024-06-10T09-46-50
