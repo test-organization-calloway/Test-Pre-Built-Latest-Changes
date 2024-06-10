@@ -1,0 +1,421 @@
+{
+  "_id": "663da1e431b5e09e96d70e07",
+  "name": "TPB Transformation in JSON Form in Workflow",
+  "description": "",
+  "incoming": [
+    {
+      "$id": "data",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string",
+            "examples": [
+              "649efda55073220157ca5ed2"
+            ]
+          },
+          "created": {
+            "type": "string",
+            "examples": [
+              "2023-04-06T20:45:18.238Z"
+            ],
+            "format": "date-time"
+          },
+          "createdBy": {
+            "type": "string",
+            "examples": [
+              "admin@pronghorn"
+            ]
+          },
+          "lastUpdated": {
+            "type": "string",
+            "examples": [
+              "2023-06-30T16:07:01.741Z"
+            ],
+            "format": "date-time"
+          },
+          "lastUpdatedBy": {
+            "type": "string",
+            "examples": [
+              "admin@pronghorn"
+            ]
+          },
+          "name": {
+            "type": "string",
+            "examples": [
+              "Gitlab get a diff of merge"
+            ]
+          },
+          "type": {
+            "type": "string",
+            "examples": [
+              "manual"
+            ]
+          },
+          "enabled": {
+            "type": "boolean",
+            "examples": [
+              true,
+              false
+            ]
+          },
+          "actionType": {
+            "type": "string",
+            "examples": [
+              "automations"
+            ]
+          },
+          "actionId": {
+            "type": "string",
+            "examples": [
+              "642f2f1dfe6f9a0168f08083"
+            ]
+          },
+          "description": {
+            "type": "string",
+            "examples": [
+              "Gitlab get a diff of merge"
+            ]
+          },
+          "formId": {
+            "type": "string",
+            "examples": [
+              "642f2dd33ef1c801102a2089"
+            ]
+          },
+          "formData": {
+            "type": "null"
+          },
+          "formSchemaHash": {
+            "type": "string",
+            "examples": [
+              "17c8532fcbf9aada0b9746b4dd22a14553b03670bf297266fb16fdd9281bbbed"
+            ]
+          },
+          "lastExecuted": {
+            "type": "null"
+          }
+        },
+        "required": []
+      },
+      "required": []
+    }
+  ],
+  "outgoing": [
+    {
+      "$id": "names",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "examples": [
+          "test"
+        ]
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "type": "method",
+      "library": "Array",
+      "method": "map",
+      "args": [
+        null,
+        "mapNames"
+      ],
+      "view": {
+        "row": 1,
+        "col": 1
+      },
+      "context": "#"
+    },
+    {
+      "id": 3,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 1,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "outgoing",
+        "name": "names",
+        "ptr": ""
+      },
+      "context": "#"
+    },
+    {
+      "id": 4,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "data",
+        "ptr": ""
+      },
+      "to": {
+        "location": "method",
+        "name": 1,
+        "ptr": "/args/0/value"
+      },
+      "context": "#"
+    }
+  ],
+  "functions": [
+    {
+      "incoming": [
+        {
+          "type": "object",
+          "properties": {
+            "_id": {
+              "type": "string",
+              "examples": [
+                "649efda55073220157ca5ed2"
+              ]
+            },
+            "created": {
+              "type": "string",
+              "examples": [
+                "2023-04-06T20:45:18.238Z"
+              ],
+              "format": "date-time"
+            },
+            "createdBy": {
+              "type": "string",
+              "examples": [
+                "admin@pronghorn"
+              ]
+            },
+            "lastUpdated": {
+              "type": "string",
+              "examples": [
+                "2023-06-30T16:07:01.741Z"
+              ],
+              "format": "date-time"
+            },
+            "lastUpdatedBy": {
+              "type": "string",
+              "examples": [
+                "admin@pronghorn"
+              ]
+            },
+            "name": {
+              "type": "string",
+              "examples": [
+                "Gitlab get a diff of merge"
+              ]
+            },
+            "type": {
+              "type": "string",
+              "examples": [
+                "manual"
+              ]
+            },
+            "enabled": {
+              "type": "boolean",
+              "examples": [
+                true,
+                false
+              ]
+            },
+            "actionType": {
+              "type": "string",
+              "examples": [
+                "automations"
+              ]
+            },
+            "actionId": {
+              "type": "string",
+              "examples": [
+                "642f2f1dfe6f9a0168f08083"
+              ]
+            },
+            "description": {
+              "type": "string",
+              "examples": [
+                "Gitlab get a diff of merge"
+              ]
+            },
+            "formId": {
+              "type": "string",
+              "examples": [
+                "642f2dd33ef1c801102a2089"
+              ]
+            },
+            "formData": {
+              "type": "null"
+            },
+            "formSchemaHash": {
+              "type": "string",
+              "examples": [
+                "17c8532fcbf9aada0b9746b4dd22a14553b03670bf297266fb16fdd9281bbbed"
+              ]
+            },
+            "lastExecuted": {
+              "type": "null"
+            }
+          },
+          "required": [],
+          "$id": "currentValue"
+        },
+        {
+          "title": "index",
+          "type": "number",
+          "optional": true,
+          "$id": "index"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "_id": {
+                "type": "string",
+                "examples": [
+                  "649efda55073220157ca5ed2"
+                ]
+              },
+              "created": {
+                "type": "string",
+                "examples": [
+                  "2023-04-06T20:45:18.238Z"
+                ],
+                "format": "date-time"
+              },
+              "createdBy": {
+                "type": "string",
+                "examples": [
+                  "admin@pronghorn"
+                ]
+              },
+              "lastUpdated": {
+                "type": "string",
+                "examples": [
+                  "2023-06-30T16:07:01.741Z"
+                ],
+                "format": "date-time"
+              },
+              "lastUpdatedBy": {
+                "type": "string",
+                "examples": [
+                  "admin@pronghorn"
+                ]
+              },
+              "name": {
+                "type": "string",
+                "examples": [
+                  "Gitlab get a diff of merge"
+                ]
+              },
+              "type": {
+                "type": "string",
+                "examples": [
+                  "manual"
+                ]
+              },
+              "enabled": {
+                "type": "boolean",
+                "examples": [
+                  true,
+                  false
+                ]
+              },
+              "actionType": {
+                "type": "string",
+                "examples": [
+                  "automations"
+                ]
+              },
+              "actionId": {
+                "type": "string",
+                "examples": [
+                  "642f2f1dfe6f9a0168f08083"
+                ]
+              },
+              "description": {
+                "type": "string",
+                "examples": [
+                  "Gitlab get a diff of merge"
+                ]
+              },
+              "formId": {
+                "type": "string",
+                "examples": [
+                  "642f2dd33ef1c801102a2089"
+                ]
+              },
+              "formData": {
+                "type": "null"
+              },
+              "formSchemaHash": {
+                "type": "string",
+                "examples": [
+                  "17c8532fcbf9aada0b9746b4dd22a14553b03670bf297266fb16fdd9281bbbed"
+                ]
+              },
+              "lastExecuted": {
+                "type": "null"
+              }
+            },
+            "required": []
+          },
+          "$id": "array",
+          "optional": true
+        }
+      ],
+      "outgoing": [
+        {
+          "$id": "newValue",
+          "type": "string",
+          "examples": [
+            "name"
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "id": 1,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "currentValue",
+            "ptr": "/name"
+          },
+          "to": {
+            "location": "outgoing",
+            "name": "newValue",
+            "ptr": ""
+          },
+          "context": "#"
+        }
+      ],
+      "functions": [],
+      "name": "mapNames",
+      "view": {
+        "col": 1,
+        "row": 4
+      },
+      "id": "mapNames",
+      "comments": []
+    }
+  ],
+  "comments": [],
+  "view": {
+    "col": 1,
+    "row": 5
+  },
+  "created": "2024-06-06T17:09:50.620Z",
+  "createdBy": {
+    "_id": "65faf9657e35d89f3c8cbeed",
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn"
+  },
+  "lastUpdated": "2024-06-06T17:09:50.620Z",
+  "lastUpdatedBy": {
+    "_id": "65faf9657e35d89f3c8cbeed",
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn"
+  },
+  "version": "4.3.6-2023.2.2",
+  "tags": []
+}

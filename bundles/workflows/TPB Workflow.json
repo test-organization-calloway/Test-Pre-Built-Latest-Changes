@@ -1,0 +1,678 @@
+{
+  "canvasVersion": 3,
+  "created": "2023-10-23T14:20:35.585Z",
+  "createdVersion": "5.46.0-2023.1.19.0",
+  "created_by": {
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn",
+    "firstname": "admin",
+    "inactive": false,
+    "gitTokens": {
+      "GitLab": "$ENC84e6972b5038e910a8d2021cfb8f505782e427d2d9d41cc63904c444a24946920084e2b16e0f68c93892"
+    },
+    "email": "chris.calloway@itential.com"
+  },
+  "errorHandler": null,
+  "font_size": 12,
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "formData": {
+        "title": "obj",
+        "type": "object",
+        "properties": {},
+        "examples": [
+          {
+            "name": "value"
+          }
+        ]
+      }
+    },
+    "required": [
+      "formData"
+    ]
+  },
+  "lastUpdatedVersion": "4.69.3-2023.2.73",
+  "last_updated": "2024-06-06T17:09:51.090Z",
+  "last_updated_by": {
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn",
+    "firstname": "admin",
+    "inactive": false,
+    "gitTokens": {
+      "GitLab": "$ENC84e6972b5038e910a8d2021cfb8f505782e427d2d9d41cc63904c444a24946920084e2b16e0f68c93892"
+    },
+    "email": "chris.calloway@itential.com"
+  },
+  "name": "TPB Workflow",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "formData": {
+        "title": "obj",
+        "type": "object",
+        "properties": {},
+        "examples": [
+          {
+            "name": "value"
+          }
+        ]
+      },
+      "_id": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{24}$"
+      },
+      "initiator": {
+        "type": "string"
+      },
+      "mop_template_results": {
+        "type": [
+          "array",
+          "boolean",
+          "null",
+          "number",
+          "object",
+          "string"
+        ]
+      },
+      "analytic_template_results": {
+        "type": [
+          "array",
+          "boolean",
+          "null",
+          "number",
+          "object",
+          "string"
+        ]
+      },
+      "parsed": {
+        "title": "parsed",
+        "type": "object"
+      },
+      "runComplianceBatchResult": {
+        "type": [
+          "array",
+          "boolean",
+          "null",
+          "number",
+          "object",
+          "string"
+        ]
+      },
+      "newName": {
+        "$id": "newName",
+        "type": "string",
+        "examples": [
+          "alice"
+        ]
+      }
+    }
+  },
+  "preAutomationTime": 0,
+  "sla": 0,
+  "tasks": {
+    "workflow_start": {
+      "name": "workflow_start",
+      "groups": [],
+      "nodeLocation": {
+        "x": -1344,
+        "y": -24
+      }
+    },
+    "workflow_end": {
+      "name": "workflow_end",
+      "groups": [],
+      "nodeLocation": {
+        "x": 2796,
+        "y": -24
+      }
+    },
+    "9fed": {
+      "name": "childJob",
+      "canvasName": "childJob",
+      "summary": "Run Child Job with Loop and Transformation",
+      "description": "Run Child Job with Loop and Transformation",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "operation",
+      "displayName": "WorkFlowEngine",
+      "variables": {
+        "incoming": {
+          "task": "",
+          "workflow": "TPB childJob Task with Loop and Transformation Child",
+          "variables": {
+            "randomString": {
+              "task": "static",
+              "value": "jones"
+            }
+          },
+          "data_array": [
+            {
+              "name": "fred"
+            }
+          ],
+          "transformation": {
+            "_id": "653681ffa0bf200185226cdb",
+            "comments": [],
+            "description": "",
+            "functions": [],
+            "incoming": [
+              {
+                "°$id": "currentValue",
+                "type": [
+                  "array",
+                  "boolean",
+                  "integer",
+                  "null",
+                  "number",
+                  "object",
+                  "string"
+                ]
+              },
+              {
+                "°$id": "randomString",
+                "type": "string",
+                "examples": [
+                  "test"
+                ]
+              }
+            ],
+            "name": "TPB Transformation in childJob Input",
+            "outgoing": [
+              {
+                "°$id": "firstName",
+                "type": "string",
+                "examples": [
+                  "fred"
+                ]
+              },
+              {
+                "°$id": "randomName",
+                "type": "string",
+                "examples": [
+                  "jones"
+                ]
+              }
+            ],
+            "steps": [
+              {
+                "id": 4,
+                "type": "assign",
+                "from": {
+                  "location": "incoming",
+                  "name": "randomString",
+                  "ptr": ""
+                },
+                "to": {
+                  "location": "outgoing",
+                  "name": "randomName",
+                  "ptr": ""
+                },
+                "context": "#"
+              },
+              {
+                "id": 2,
+                "type": "assign",
+                "from": {
+                  "location": "incoming",
+                  "name": "currentValue",
+                  "ptr": ""
+                },
+                "to": {
+                  "location": "method",
+                  "name": 1,
+                  "ptr": "/args/0/value"
+                },
+                "context": "#"
+              },
+              {
+                "id": 1,
+                "type": "method",
+                "library": "Object",
+                "method": "getProperty",
+                "args": [
+                  null,
+                  "name"
+                ],
+                "view": {
+                  "row": 1,
+                  "col": 1
+                },
+                "context": "#"
+              },
+              {
+                "id": 3,
+                "type": "assign",
+                "from": {
+                  "location": "method",
+                  "name": 1,
+                  "ptr": "/return"
+                },
+                "to": {
+                  "location": "outgoing",
+                  "name": "firstName",
+                  "ptr": ""
+                },
+                "context": "#"
+              }
+            ],
+            "version": "4.3.6-2023.2.2",
+            "view": {
+              "col": 1,
+              "row": 5
+            },
+            "created": "2024-06-06T17:09:50.612Z",
+            "createdBy": "65faf9657e35d89f3c8cbeed",
+            "lastUpdated": "2024-06-06T17:09:50.612Z",
+            "lastUpdatedBy": "65faf9657e35d89f3c8cbeed"
+          },
+          "loopType": "sequential"
+        },
+        "outgoing": {
+          "job_details": ""
+        }
+      },
+      "actor": "job",
+      "groups": [],
+      "nodeLocation": {
+        "x": -444,
+        "y": -24
+      }
+    },
+    "ba56": {
+      "name": "childJob",
+      "canvasName": "childJob",
+      "summary": "TPB childJob Task Child",
+      "description": "Runs a child job inside a workflow.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "operation",
+      "displayName": "WorkFlowEngine",
+      "variables": {
+        "incoming": {
+          "task": "",
+          "workflow": "TPB childJob Task Child",
+          "variables": {
+            "firstName": {
+              "task": "static",
+              "value": "Alice"
+            },
+            "lastName": {
+              "task": "static",
+              "value": "Jones"
+            }
+          },
+          "data_array": "",
+          "transformation": "",
+          "loopType": ""
+        },
+        "outgoing": {
+          "job_details": ""
+        }
+      },
+      "actor": "job",
+      "groups": [],
+      "nodeLocation": {
+        "x": -780,
+        "y": -24
+      }
+    },
+    "d4b4": {
+      "name": "ShowFormByName",
+      "canvasName": "ShowFormByName",
+      "summary": "TPB Form",
+      "description": "Show Form",
+      "location": "Application",
+      "app": "FormBuilder",
+      "displayName": "Forms",
+      "type": "manual",
+      "variables": {
+        "incoming": {
+          "form_name": "TPB Form",
+          "instance_data": {}
+        },
+        "outgoing": {
+          "export": ""
+        }
+      },
+      "view": "/formbuilder/task/ShowFormByName",
+      "groups": [],
+      "nodeLocation": {
+        "x": -120,
+        "y": -24
+      }
+    },
+    "eaea": {
+      "name": "ShowJsonForm",
+      "canvasName": "ShowJsonForm",
+      "summary": "TPB JSON Form in Workflow",
+      "description": "Show Json Form",
+      "location": "Application",
+      "app": "JsonForms",
+      "displayName": "JsonForms",
+      "type": "manual",
+      "variables": {
+        "incoming": {
+          "form_id": "TPB JSON Form in Workflow",
+          "instance_data": {}
+        },
+        "outgoing": {
+          "export": ""
+        }
+      },
+      "view": "/json-forms/task/ShowJsonForm",
+      "groups": [],
+      "nodeLocation": {
+        "x": 192,
+        "y": -24
+      }
+    },
+    "e322": {
+      "name": "RunCommandTemplate",
+      "canvasName": "RunCommandTemplate",
+      "summary": "Run Command Template",
+      "description": "Run a Command Template against devices.",
+      "location": "Application",
+      "locationType": null,
+      "app": "MOP",
+      "type": "automatic",
+      "displayName": "MOP",
+      "variables": {
+        "incoming": {
+          "template": "TPB Command Template",
+          "variables": {},
+          "devices": "$var.d29b.pushedArray"
+        },
+        "outgoing": {
+          "mop_template_results": "$var.job.mop_template_results"
+        }
+      },
+      "actor": "Pronghorn",
+      "groups": [],
+      "nodeLocation": {
+        "x": 822,
+        "y": -24
+      }
+    },
+    "4aa3": {
+      "name": "runAnalyticsTemplate",
+      "canvasName": "runAnalyticsTemplate",
+      "summary": "TPB Analytic Template",
+      "description": "Run an Analytic Template.",
+      "location": "Application",
+      "locationType": null,
+      "app": "MOP",
+      "type": "automatic",
+      "displayName": "MOP",
+      "variables": {
+        "incoming": {
+          "pre": "$var.e322.mop_template_results",
+          "post": "$var.e322.mop_template_results",
+          "analytic_template_name": "TPB Analytic Template",
+          "variables": {}
+        },
+        "outgoing": {
+          "analytic_template_results": "$var.job.analytic_template_results"
+        }
+      },
+      "actor": "Pronghorn",
+      "groups": [],
+      "nodeLocation": {
+        "x": 1152,
+        "y": -24
+      }
+    },
+    "cad6": {
+      "name": "applyTemplate",
+      "canvasName": "applyTemplate",
+      "summary": "Apply a template to text",
+      "description": "Apply a template to parse text",
+      "location": "Application",
+      "locationType": null,
+      "app": "TemplateBuilder",
+      "type": "automatic",
+      "displayName": "TemplateBuilder",
+      "variables": {
+        "incoming": {
+          "text": "Directory of bootflash:/\n\n   11  drwx            16384   Mar 2 2015 08:46:31 +00:00  lost+found\n681409  drwx             4096   Mar 2 2015 08:47:35 +00:00  .super.iso.dir\n   12  -rw-               46  Apr 22 2016 12:36:24 +00:00  .CsrLxc_LastInstall\n   13  -rw-               84   Mar 2 2015 08:50:43 +00:00  virtual-instance.conf\n876097  drwx             4096   Mar 2 2015 08:49:40 +00:00  core\n   15  -rw-        161136640   Mar 2 2015 08:47:34 +00:00  iosxe-remote-mgmt.03.14.01.S.155-1.S1-std.ova\n519172  -rw-        250578048   Mar 2 2015 08:48:31 +00:00  csr1000v-mono-universalk9.03.14.01.S.155-1.S1-std.SPA.pkg\n519170  -rw-             4892   Mar 2 2015 08:48:30 +00:00  csr1000v-packages-universalk9.03.14.01.S.155-1.S1-std.conf\n519171  -rw-             5681   Mar 2 2015 08:48:31 +00:00  packages.conf\n827425  drwx             4096   Mar 2 2015 08:49:40 +00:00  .prst_sync\n730081  drwx             4096   Mar 2 2015 08:49:43 +00:00  .rollback_timer\n   16  -rw-                0   Mar 2 2015 08:49:46 +00:00  tracelogs.394\n\n7835619328 bytes total (6612774912 bytes free)",
+          "template": "TPB TextFSM Template"
+        },
+        "outgoing": {
+          "parsed": "$var.job.parsed"
+        }
+      },
+      "actor": "Pronghorn",
+      "groups": [],
+      "nodeLocation": {
+        "x": 1788,
+        "y": -24
+      }
+    },
+    "42bb": {
+      "name": "runComplianceForTree",
+      "canvasName": "runComplianceForTree",
+      "summary": "Run Compliance Reports (Tree)",
+      "description": "Begin a compliance report run for a Golden Config tree.",
+      "location": "Application",
+      "locationType": null,
+      "app": "ConfigurationManager",
+      "type": "automatic",
+      "displayName": "ConfigurationManager",
+      "variables": {
+        "incoming": {
+          "treeId": "65368b61a122470141b852e6",
+          "version": "version2",
+          "variables": {},
+          "grading": {}
+        },
+        "outgoing": {
+          "runComplianceBatchResult": "$var.job.runComplianceBatchResult"
+        }
+      },
+      "actor": "Pronghorn",
+      "groups": [],
+      "nodeLocation": {
+        "x": 2082,
+        "y": -24
+      }
+    },
+    "aed6": {
+      "name": "transformation",
+      "canvasName": "transformation",
+      "summary": "TPB Transformation in Workflow Task",
+      "description": "Perform a JSON Transformation using the JST library.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "operation",
+      "displayName": "WorkFlowEngine",
+      "variables": {
+        "incoming": {
+          "tr_id": "6536e91dbd5eea0160a56829",
+          "variableMap": {
+            "name": "fred"
+          },
+          "options": ""
+        },
+        "outgoing": {
+          "newName": "$var.job.newName"
+        },
+        "decorators": []
+      },
+      "actor": "Pronghorn",
+      "groups": [],
+      "nodeLocation": {
+        "x": 2400,
+        "y": -24
+      }
+    },
+    "ec0a": {
+      "name": "renderJinjaTemplate",
+      "canvasName": "renderJinjaTemplate",
+      "summary": "Render Jinja Template",
+      "description": "Renders jinja template output.",
+      "location": "Application",
+      "locationType": null,
+      "app": "TemplateBuilder",
+      "type": "automatic",
+      "displayName": "TemplateBuilder",
+      "variables": {
+        "incoming": {
+          "name": "TPB Jinja2 Template",
+          "context": {
+            "name": "bob"
+          }
+        },
+        "outgoing": {
+          "renderedTemplate": ""
+        }
+      },
+      "actor": "Pronghorn",
+      "groups": [],
+      "nodeLocation": {
+        "x": 1464,
+        "y": -24
+      }
+    },
+    "d29b": {
+      "name": "arrayPush",
+      "canvasName": "push",
+      "summary": "Create list of devices",
+      "description": "Create list of devices",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "automatic",
+      "displayName": "Array",
+      "variables": {
+        "incoming": {
+          "arr": [],
+          "elementN": "$var.84e7.return_data"
+        },
+        "outgoing": {
+          "pushedArray": ""
+        }
+      },
+      "actor": "Pronghorn",
+      "groups": [],
+      "nodeLocation": {
+        "x": 507,
+        "y": -24
+      }
+    },
+    "84e7": {
+      "name": "query",
+      "canvasName": "query",
+      "summary": "Query device name from form data",
+      "description": "Query device name from form data",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "operation",
+      "displayName": "WorkFlowEngine",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "device",
+          "obj": "$var.job.formData"
+        },
+        "outgoing": {
+          "return_data": ""
+        }
+      },
+      "actor": "Pronghorn",
+      "groups": [],
+      "nodeLocation": {
+        "x": -1092,
+        "y": -24
+      }
+    }
+  },
+  "transitions": {
+    "workflow_start": {
+      "84e7": {
+        "state": "success",
+        "type": "standard"
+      }
+    },
+    "workflow_end": {},
+    "9fed": {
+      "d4b4": {
+        "state": "success",
+        "type": "standard"
+      }
+    },
+    "ba56": {
+      "9fed": {
+        "state": "success",
+        "type": "standard"
+      }
+    },
+    "d4b4": {
+      "eaea": {
+        "state": "success",
+        "type": "standard"
+      }
+    },
+    "eaea": {
+      "d29b": {
+        "state": "success",
+        "type": "standard"
+      }
+    },
+    "e322": {
+      "4aa3": {
+        "state": "success",
+        "type": "standard"
+      }
+    },
+    "4aa3": {
+      "ec0a": {
+        "state": "success",
+        "type": "standard"
+      }
+    },
+    "cad6": {
+      "42bb": {
+        "state": "success",
+        "type": "standard"
+      }
+    },
+    "42bb": {
+      "aed6": {
+        "state": "success",
+        "type": "standard"
+      }
+    },
+    "aed6": {
+      "workflow_end": {
+        "state": "success",
+        "type": "standard"
+      }
+    },
+    "ec0a": {
+      "cad6": {
+        "state": "success",
+        "type": "standard"
+      }
+    },
+    "d29b": {
+      "e322": {
+        "state": "success",
+        "type": "standard"
+      }
+    },
+    "84e7": {
+      "ba56": {
+        "state": "success",
+        "type": "standard"
+      }
+    }
+  },
+  "type": "automation",
+  "tags": [],
+  "groups": [],
+  "migrationVersion": 3
+}

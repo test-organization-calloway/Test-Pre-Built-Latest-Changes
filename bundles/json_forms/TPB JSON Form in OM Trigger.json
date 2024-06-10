@@ -1,0 +1,122 @@
+{
+  "id": "6536ecb41227df0152025104",
+  "bindingSchema": {
+    "properties": {
+      "device": {
+        "binding:method": "POST",
+        "binding:link": {
+          "$ref": "/links",
+          "rel": "collection"
+        },
+        "binding:body": {
+          "options": {
+            "filter": {
+              "name": ""
+            },
+            "start": 0,
+            "limit": 25,
+            "sort": [
+              {
+                "name": 1
+              }
+            ],
+            "order": "ascending"
+          }
+        },
+        "binding:target": {
+          "propertyPointer": "/enum"
+        },
+        "binding:hyperSchema": {
+          "type": "object",
+          "base": "/configuration_manager",
+          "links": [
+            {
+              "rel": "collection",
+              "href": "/devices",
+              "targetMediaType": "application/json",
+              "targetSchema": {
+                "$ref": "#"
+              },
+              "variables": []
+            }
+          ]
+        },
+        "binding:source": {
+          "propertyPointer": "/list",
+          "keyPointer": "/name"
+        }
+      }
+    }
+  },
+  "created": "2023-10-23T21:59:16.508Z",
+  "createdBy": "admin@pronghorn",
+  "description": "",
+  "lastUpdated": "2024-06-06T17:09:52.676Z",
+  "lastUpdatedBy": "admin@pronghorn",
+  "name": "TPB JSON Form in OM Trigger",
+  "schema": {
+    "title": "TPB JSON Form in OM Trigger",
+    "description": "",
+    "type": "object",
+    "required": [],
+    "properties": {
+      "device": {
+        "type": "string",
+        "title": "Device",
+        "_id": "/properties/device",
+        "description": "",
+        "enum": [],
+        "enumNames": []
+      }
+    }
+  },
+  "struct": {
+    "type": "array",
+    "items": [
+      {
+        "nodeId": "bcb31a92-7bce-41f8-8449-843e6966ccd6",
+        "type": "string",
+        "title": "Device",
+        "description": "",
+        "placeholder": "Select a device",
+        "required": false,
+        "enum": [],
+        "enumNames": [],
+        "binding": true,
+        "rel": "collection",
+        "targetPointer": "/enum",
+        "helper": "Select device that will be used in command template",
+        "method": "POST",
+        "uniqueItems": false,
+        "base": "/configuration_manager",
+        "originalHref": "/devices",
+        "href": "/devices",
+        "body": {
+          "options": {
+            "filter": {
+              "name": ""
+            },
+            "start": 0,
+            "limit": 25,
+            "sort": [
+              {
+                "name": 1
+              }
+            ],
+            "order": "ascending"
+          }
+        },
+        "sourcePointer": "/list",
+        "sourceKeyPointer": "/name"
+      }
+    ]
+  },
+  "uiSchema": {
+    "device": {
+      "ui:placeholder": "Select a device",
+      "ui:help": "Select device that will be used in command template"
+    }
+  },
+  "validationSchema": {},
+  "version": "2020.1"
+}

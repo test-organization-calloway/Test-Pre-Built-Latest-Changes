@@ -1,0 +1,30 @@
+{
+  "_id": "6536e7a7a3900a00fef388e0",
+  "command": "",
+  "created": "2023-10-23T21:38:01.455Z",
+  "data": "{\"name\": \"bob\"}",
+  "description": "",
+  "group": "Test",
+  "lastUpdated": "2024-06-06T17:09:51.348Z",
+  "name": "TPB Jinja2 Template",
+  "tags": [],
+  "template": "{{name}}",
+  "type": "jinja2",
+  "version": 1,
+  "createdBy": {
+    "_id": "65faf9657e35d89f3c8cbeed",
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn",
+    "firstname": "admin",
+    "inactive": false,
+    "email": "chris.calloway@itential.com"
+  },
+  "lastUpdatedBy": {
+    "_id": "65faf9657e35d89f3c8cbeed",
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn",
+    "firstname": "admin",
+    "inactive": false,
+    "email": "chris.calloway@itential.com"
+  }
+}

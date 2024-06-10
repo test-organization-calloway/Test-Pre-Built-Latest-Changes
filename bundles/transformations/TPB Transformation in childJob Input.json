@@ -1,0 +1,124 @@
+{
+  "_id": "653681ffa0bf200185226cdb",
+  "name": "TPB Transformation in childJob Input",
+  "description": "",
+  "incoming": [
+    {
+      "$id": "currentValue",
+      "type": [
+        "array",
+        "boolean",
+        "integer",
+        "null",
+        "number",
+        "object",
+        "string"
+      ]
+    },
+    {
+      "$id": "randomString",
+      "type": "string",
+      "examples": [
+        "test"
+      ]
+    }
+  ],
+  "outgoing": [
+    {
+      "$id": "firstName",
+      "type": "string",
+      "examples": [
+        "fred"
+      ]
+    },
+    {
+      "$id": "randomName",
+      "type": "string",
+      "examples": [
+        "jones"
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "id": 4,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "randomString",
+        "ptr": ""
+      },
+      "to": {
+        "location": "outgoing",
+        "name": "randomName",
+        "ptr": ""
+      },
+      "context": "#"
+    },
+    {
+      "id": 2,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "currentValue",
+        "ptr": ""
+      },
+      "to": {
+        "location": "method",
+        "name": 1,
+        "ptr": "/args/0/value"
+      },
+      "context": "#"
+    },
+    {
+      "id": 1,
+      "type": "method",
+      "library": "Object",
+      "method": "getProperty",
+      "args": [
+        null,
+        "name"
+      ],
+      "view": {
+        "row": 1,
+        "col": 1
+      },
+      "context": "#"
+    },
+    {
+      "id": 3,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 1,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "outgoing",
+        "name": "firstName",
+        "ptr": ""
+      },
+      "context": "#"
+    }
+  ],
+  "functions": [],
+  "comments": [],
+  "view": {
+    "col": 1,
+    "row": 5
+  },
+  "created": "2024-06-06T17:09:50.612Z",
+  "createdBy": {
+    "_id": "65faf9657e35d89f3c8cbeed",
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn"
+  },
+  "lastUpdated": "2024-06-06T17:09:50.612Z",
+  "lastUpdatedBy": {
+    "_id": "65faf9657e35d89f3c8cbeed",
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn"
+  },
+  "version": "4.3.6-2023.2.2",
+  "tags": []
+}

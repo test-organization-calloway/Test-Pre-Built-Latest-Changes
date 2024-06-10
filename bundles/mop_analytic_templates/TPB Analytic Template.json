@@ -1,0 +1,27 @@
+{
+  "tags": [],
+  "name": "TPB Analytic Template",
+  "passRule": true,
+  "prepostCommands": [
+    {
+      "preRawCommand": "show version",
+      "postRawCommand": "show version",
+      "passRule": true,
+      "rules": [
+        {
+          "type": "matches",
+          "preRegex": "",
+          "postRegex": "",
+          "evaluator": "=",
+          "severity": "warning"
+        }
+      ],
+      "preCommandResHTML": "Test a command or the template to get results here",
+      "postCommandResHTML": "Test a command or the template to get results here"
+    }
+  ],
+  "created": 1698096968187,
+  "createdBy": "admin@pronghorn",
+  "lastUpdated": 1717693791414,
+  "lastUpdatedBy": "admin@pronghorn"
+}

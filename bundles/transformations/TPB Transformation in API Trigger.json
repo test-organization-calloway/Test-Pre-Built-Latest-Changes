@@ -1,0 +1,66 @@
+{
+  "_id": "6536ed38bd5eea0160a5682a",
+  "name": "TPB Transformation in API Trigger",
+  "description": "",
+  "incoming": [
+    {
+      "$id": "testDeviceName",
+      "type": "string",
+      "examples": [
+        "test"
+      ]
+    }
+  ],
+  "outgoing": [
+    {
+      "$id": "formData",
+      "type": "object",
+      "properties": {
+        "device": {
+          "type": "string",
+          "examples": [
+            "test"
+          ]
+        }
+      },
+      "required": []
+    }
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "testDeviceName",
+        "ptr": ""
+      },
+      "to": {
+        "location": "outgoing",
+        "name": "formData",
+        "ptr": "/device"
+      },
+      "context": "#"
+    }
+  ],
+  "functions": [],
+  "comments": [],
+  "view": {
+    "col": 1,
+    "row": 5
+  },
+  "created": "2024-06-06T17:09:50.586Z",
+  "createdBy": {
+    "_id": "65faf9657e35d89f3c8cbeed",
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn"
+  },
+  "lastUpdated": "2024-06-06T17:09:50.586Z",
+  "lastUpdatedBy": {
+    "_id": "65faf9657e35d89f3c8cbeed",
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn"
+  },
+  "version": "4.3.6-2023.2.2",
+  "tags": []
+}

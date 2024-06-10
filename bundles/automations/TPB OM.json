@@ -1,0 +1,122 @@
+{
+  "_id": "6536ec614bf4a001bb6fade5",
+  "name": "TPB OM",
+  "description": "",
+  "componentName": "TPB Workflow",
+  "componentType": "workflows",
+  "gbac": {
+    "write": [],
+    "read": []
+  },
+  "created": "2023-10-23T21:57:53.592Z",
+  "createdBy": "admin@pronghorn",
+  "lastUpdated": "2024-06-06T17:09:53.177Z",
+  "lastUpdatedBy": "admin@pronghorn",
+  "triggers": [
+    {
+      "_id": "6661ed62db6dff9d5b848f27",
+      "created": "2023-10-23T22:00:40.065Z",
+      "createdBy": "admin@pronghorn",
+      "lastUpdated": "2024-06-06T17:09:54.651Z",
+      "lastUpdatedBy": "admin@pronghorn",
+      "name": "Start TPB Workflow with API",
+      "type": "endpoint",
+      "enabled": true,
+      "actionType": "automations",
+      "actionId": "6536ec614bf4a001bb6fade5",
+      "description": "",
+      "verb": "POST",
+      "routeName": "tpb",
+      "schema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "jst": {
+        "_id": "6536ed38bd5eea0160a5682a",
+        "name": "TPB Transformation in API Trigger",
+        "description": "",
+        "incoming": [
+          {
+            "$id": "testDeviceName",
+            "type": "string",
+            "examples": [
+              "test"
+            ]
+          }
+        ],
+        "outgoing": [
+          {
+            "$id": "formData",
+            "type": "object",
+            "properties": {
+              "device": {
+                "type": "string",
+                "examples": [
+                  "test"
+                ]
+              }
+            },
+            "required": []
+          }
+        ],
+        "steps": [
+          {
+            "id": 1,
+            "type": "assign",
+            "from": {
+              "location": "incoming",
+              "name": "testDeviceName",
+              "ptr": ""
+            },
+            "to": {
+              "location": "outgoing",
+              "name": "formData",
+              "ptr": "/device"
+            },
+            "context": "#"
+          }
+        ],
+        "functions": [],
+        "comments": [],
+        "view": {
+          "col": 1,
+          "row": 5
+        },
+        "created": "2024-06-06T17:09:50.586Z",
+        "createdBy": {
+          "_id": "65faf9657e35d89f3c8cbeed",
+          "provenance": "local_aaa",
+          "username": "admin@pronghorn"
+        },
+        "lastUpdated": "2024-06-06T17:09:50.586Z",
+        "lastUpdatedBy": {
+          "_id": "65faf9657e35d89f3c8cbeed",
+          "provenance": "local_aaa",
+          "username": "admin@pronghorn"
+        },
+        "version": "4.3.6-2023.2.2",
+        "tags": []
+      },
+      "migrationVersion": 3
+    },
+    {
+      "_id": "6661ed62db6dff9d5b848f26",
+      "created": "2023-10-23T21:59:59.510Z",
+      "createdBy": "admin@pronghorn",
+      "lastUpdated": "2024-06-06T17:09:54.673Z",
+      "lastUpdatedBy": "admin@pronghorn",
+      "name": "Start TPB Workflow with Form",
+      "type": "manual",
+      "enabled": true,
+      "actionType": "automations",
+      "actionId": "6536ec614bf4a001bb6fade5",
+      "description": "",
+      "formId": "TPB JSON Form in OM Trigger",
+      "formData": null,
+      "formSchemaHash": "b65f2bc89b3f4c25447e23dc12dfe872571dab1137d437947851621169a28e63",
+      "legacyWrapper": true,
+      "migrationVersion": 3
+    }
+  ]
+}

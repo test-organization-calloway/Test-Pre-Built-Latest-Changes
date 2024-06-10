@@ -1,0 +1,116 @@
+{
+  "name": "Test Workflow",
+  "tasks": {
+    "workflow_start": {
+      "name": "workflow_start",
+      "groups": [],
+      "nodeLocation": {
+        "x": 0,
+        "y": -276
+      },
+      "x": 0,
+      "y": 0.5
+    },
+    "workflow_end": {
+      "name": "workflow_end",
+      "groups": [],
+      "nodeLocation": {
+        "x": 0,
+        "y": -48
+      },
+      "x": 1,
+      "y": 0.5
+    },
+    "45cf": {
+      "name": "stub",
+      "canvasName": "stub",
+      "summary": "Stub",
+      "description": "Create a stub for an automated task",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "automatic",
+      "displayName": "Tools",
+      "variables": {
+        "incoming": {
+          "type": "success",
+          "delay": "",
+          "response": ""
+        },
+        "outgoing": {
+          "response": ""
+        }
+      },
+      "actor": "Pronghorn",
+      "groups": [],
+      "nodeLocation": {
+        "x": 0,
+        "y": -168
+      }
+    }
+  },
+  "transitions": {
+    "workflow_start": {
+      "45cf": {
+        "state": "success",
+        "type": "standard"
+      }
+    },
+    "workflow_end": {},
+    "45cf": {
+      "workflow_end": {
+        "state": "success",
+        "type": "standard"
+      }
+    }
+  },
+  "inputSchema": {
+    "type": "object",
+    "properties": {}
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "_id": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{24}$"
+      },
+      "initiator": {
+        "type": "string"
+      }
+    }
+  },
+  "canvasVersion": 3,
+  "type": "automation",
+  "font_size": 12,
+  "errorHandler": null,
+  "preAutomationTime": 0,
+  "sla": 0,
+  "last_updated": "2024-04-11T18:34:47.342Z",
+  "last_updated_by": {
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn",
+    "firstname": "admin",
+    "inactive": false,
+    "gitTokens": {
+      "GitLab": "$ENC84e6972b5038e910a8d2021cfb8f505782e427d2d9d41cc63904c444a24946920084e2b16e0f68c93892"
+    },
+    "email": "chris.calloway@itential.com"
+  },
+  "lastUpdatedVersion": "5.55.2-2023.2.2",
+  "created": "2024-04-11T18:34:20.481Z",
+  "created_by": {
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn",
+    "firstname": "admin",
+    "inactive": false,
+    "gitTokens": {
+      "GitLab": "$ENC84e6972b5038e910a8d2021cfb8f505782e427d2d9d41cc63904c444a24946920084e2b16e0f68c93892"
+    },
+    "email": "chris.calloway@itential.com"
+  },
+  "createdVersion": "5.55.2-2023.2.2",
+  "tags": [],
+  "groups": [],
+  "migrationVersion": 3
+}

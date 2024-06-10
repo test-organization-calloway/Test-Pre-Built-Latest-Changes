@@ -1,0 +1,91 @@
+{
+  "_id": "6536e91dbd5eea0160a56829",
+  "name": "TPB Transformation in Workflow Task",
+  "description": "",
+  "incoming": [
+    {
+      "$id": "name",
+      "type": "string",
+      "examples": [
+        "fred"
+      ]
+    }
+  ],
+  "outgoing": [
+    {
+      "$id": "newName",
+      "type": "string",
+      "examples": [
+        "alice"
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "id": 2,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "name",
+        "ptr": ""
+      },
+      "to": {
+        "location": "method",
+        "name": 1,
+        "ptr": "/args/0/value"
+      },
+      "context": "#"
+    },
+    {
+      "id": 1,
+      "type": "method",
+      "library": "String",
+      "method": "concat",
+      "args": [
+        null,
+        " ",
+        "Awesome"
+      ],
+      "view": {
+        "row": 1,
+        "col": 1
+      },
+      "context": "#"
+    },
+    {
+      "id": 3,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 1,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "outgoing",
+        "name": "newName",
+        "ptr": ""
+      },
+      "context": "#"
+    }
+  ],
+  "functions": [],
+  "comments": [],
+  "view": {
+    "col": 1,
+    "row": 5
+  },
+  "created": "2024-06-06T17:09:50.576Z",
+  "createdBy": {
+    "_id": "65faf9657e35d89f3c8cbeed",
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn"
+  },
+  "lastUpdated": "2024-06-06T17:09:50.576Z",
+  "lastUpdatedBy": {
+    "_id": "65faf9657e35d89f3c8cbeed",
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn"
+  },
+  "version": "4.3.6-2023.2.2",
+  "tags": []
+}

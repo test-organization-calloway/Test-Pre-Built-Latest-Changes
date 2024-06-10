@@ -1,0 +1,92 @@
+{
+  "id": "6536879886076a01796c8083",
+  "bindingSchema": {
+    "properties": {
+      "trigger": {
+        "binding:method": "GET",
+        "binding:link": {
+          "$ref": "/links",
+          "rel": "collection"
+        },
+        "binding:target": {
+          "propertyPointer": "/enum"
+        },
+        "binding:hyperSchema": {
+          "type": "object",
+          "base": "/operations-manager",
+          "links": [
+            {
+              "rel": "collection",
+              "href": "/triggers",
+              "targetMediaType": "application/json",
+              "targetSchema": {
+                "$ref": "#"
+              },
+              "variables": []
+            }
+          ]
+        },
+        "binding:source": {
+          "transformation": "663da1e431b5e09e96d70e07",
+          "transformationUrl": "/automation-studio/json-forms/runtransformation/663da1e431b5e09e96d70e07"
+        }
+      }
+    }
+  },
+  "created": "2023-10-23T14:47:52.524Z",
+  "createdBy": "admin@pronghorn",
+  "description": "",
+  "lastUpdated": "2024-06-06T17:09:52.715Z",
+  "lastUpdatedBy": "admin@pronghorn",
+  "name": "TPB JSON Form in Workflow",
+  "schema": {
+    "title": "TPB JSON Form in Workflow",
+    "description": "",
+    "type": "object",
+    "required": [],
+    "properties": {
+      "trigger": {
+        "type": "string",
+        "title": "Trigger",
+        "_id": "/properties/trigger",
+        "description": "",
+        "enum": [],
+        "enumNames": []
+      }
+    }
+  },
+  "struct": {
+    "type": "array",
+    "items": [
+      {
+        "nodeId": "5066de35-bda2-4a01-8dff-df185d8eeff1",
+        "type": "string",
+        "title": "Trigger",
+        "description": "",
+        "placeholder": "Select an item",
+        "required": false,
+        "enum": [],
+        "enumNames": [],
+        "binding": true,
+        "rel": "collection",
+        "targetPointer": "/enum",
+        "method": "GET",
+        "uniqueItems": false,
+        "base": "/operations-manager",
+        "href": "/triggers",
+        "sourceKeyPointer": "",
+        "transformation": "663da1e431b5e09e96d70e07",
+        "sourcePointer": "",
+        "originalHref": "/:id",
+        "variables": []
+      }
+    ]
+  },
+  "uiSchema": {
+    "trigger": {
+      "ui:placeholder": "Select an item"
+    }
+  },
+  "validationSchema": {},
+  "version": "2020.1"
+}

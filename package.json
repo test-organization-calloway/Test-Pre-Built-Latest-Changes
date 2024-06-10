@@ -1,0 +1,38 @@
+{
+  "name": "@demo/pre-built-demo",
+  "author": "Chris Calloway",
+  "repository": {
+    "type": "local",
+    "hostname": "localhost",
+    "path": "/"
+  },
+  "license": "Apache-2.0",
+  "description": "Demonstration of Pre-Builts",
+  "version": "0.0.1",
+  "keywords": [
+    "demonstration"
+  ],
+  "scripts": {
+    "test": "echo \"No test specified\" && exit 1",
+    "deploy": "echo \"No deploy specified\" && exit 1",
+    "validateSchema": "node test/manifestTester.js manifest.json manifest-schema.json",
+    "validateSchemaLinks": "node test/manifestLinkTester.js manifest.json"
+  },
+  "devDependencies": {
+    "ajv": "^6.12.6",
+    "better-ajv-errors": "^1.2.0",
+    "fs-extra": "^7.0.1",
+    "r2": "^2.0.1"
+  },
+  "IAPDependencies": {
+    "@itential/app-workflow_engine": "",
+    "@itential/app-json_forms": "",
+    "@itential/app-form_builder": "",
+    "@itential/app-jst": "",
+    "@itential/app-mop": "",
+    "@itential/app-template_builder": "",
+    "@itential/app-configuration_manager": "",
+    "@itential/app-operations_manager": ""
+  },
+  "IAPCategories": []
+}

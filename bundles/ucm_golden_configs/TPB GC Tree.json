@@ -1,0 +1,145 @@
+{
+  "status": "success",
+  "data": [
+    {
+      "_id": "65368b611819247ce06481fd",
+      "name": "TPB GC Tree",
+      "version": "initial",
+      "created": "1970-01-01T00:00:00.000Z",
+      "createdBy": "65faf9657e35d89f3c8cbeed",
+      "deviceType": "json",
+      "gbac": {
+        "write": [],
+        "read": []
+      },
+      "lastUpdated": "2024-06-06T17:09:52.762Z",
+      "lastUpdatedBy": "65faf9657e35d89f3c8cbeed",
+      "root": {
+        "name": "base",
+        "attributes": {
+          "tasks": [
+            "65368b61a122470141b852e9"
+          ],
+          "devices": [],
+          "deviceGroups": [],
+          "remediationWorkflow": null,
+          "configId": "65368b61a122470141b852e7",
+          "ruleSet": {
+            "keysExist": [],
+            "severity": {
+              "error": [],
+              "warning": [],
+              "info": []
+            },
+            "evalMode": {
+              "required": [],
+              "disallowed": [],
+              "ignored": []
+            }
+          },
+          "export": {
+            "_id": "65368b61a122470141b852e7",
+            "created": "2023-10-23T15:04:01.604Z",
+            "createdBy": "65faf9657e35d89f3c8cbeed",
+            "data": {},
+            "lastUpdated": "2024-06-06T17:09:52.762Z",
+            "lastUpdatedBy": "65faf9657e35d89f3c8cbeed"
+          }
+        },
+        "children": []
+      },
+      "tags": [],
+      "treeId": "65368b61a122470141b852e6"
+    },
+    {
+      "_id": "65368b611819247ce06481fe",
+      "name": "TPB GC Tree",
+      "version": "version2",
+      "base": "initial",
+      "created": "1970-01-01T00:00:00.000Z",
+      "createdBy": "65faf9657e35d89f3c8cbeed",
+      "deviceType": "json",
+      "gbac": {
+        "write": [],
+        "read": []
+      },
+      "lastUpdated": "2024-06-06T17:09:52.762Z",
+      "lastUpdatedBy": "65faf9657e35d89f3c8cbeed",
+      "root": {
+        "name": "base",
+        "attributes": {
+          "tasks": [
+            "65368b61a122470141b852ea",
+            "65368b61a122470141b852eb"
+          ],
+          "devices": [],
+          "deviceGroups": [],
+          "remediationWorkflow": null,
+          "configId": "65368b61a122470141b852e8",
+          "ruleSet": {
+            "keysExist": [],
+            "severity": {
+              "error": [],
+              "warning": [],
+              "info": []
+            },
+            "evalMode": {
+              "required": [],
+              "disallowed": [],
+              "ignored": []
+            }
+          },
+          "export": {
+            "_id": "65368b61a122470141b852e8",
+            "created": "2023-10-23T15:04:01.604Z",
+            "createdBy": "65faf9657e35d89f3c8cbeed",
+            "data": {},
+            "lastUpdated": "2024-06-06T17:09:52.762Z",
+            "lastUpdatedBy": "65faf9657e35d89f3c8cbeed"
+          }
+        },
+        "children": []
+      },
+      "tags": [],
+      "treeId": "65368b61a122470141b852e6"
+    }
+  ],
+  "taskInstances": [
+    {
+      "_id": "65368b61a122470141b852e9",
+      "created": "2023-10-23T15:04:01.604Z",
+      "createdBy": "65faf9657e35d89f3c8cbeed",
+      "name": "testgetNEDs",
+      "origin": "DSUP NSO57",
+      "taskName": "getNEDs",
+      "taskParams": {},
+      "treeId": "65368b61a122470141b852e6",
+      "updated": "2024-06-06T17:09:52.762Z",
+      "updatedBy": "65faf9657e35d89f3c8cbeed"
+    },
+    {
+      "_id": "65368b61a122470141b852ea",
+      "created": "2023-10-23T15:04:01.604Z",
+      "createdBy": "65faf9657e35d89f3c8cbeed",
+      "name": "testgetNEDs",
+      "origin": "DSUP NSO57",
+      "taskName": "getNEDs",
+      "taskParams": {},
+      "treeId": "65368b61a122470141b852e6",
+      "updated": "2024-06-06T17:09:52.762Z",
+      "updatedBy": "65faf9657e35d89f3c8cbeed"
+    },
+    {
+      "_id": "65368b61a122470141b852eb",
+      "created": "2023-10-23T15:04:01.604Z",
+      "createdBy": "65faf9657e35d89f3c8cbeed",
+      "name": "getdeviceGroupInstance",
+      "origin": "DSUP NSO57",
+      "taskName": "getDeviceGroups",
+      "taskParams": {},
+      "treeId": "65368b61a122470141b852e6",
+      "updated": "2024-06-06T17:09:52.762Z",
+      "updatedBy": "65faf9657e35d89f3c8cbeed"
+    }
+  ]
+}

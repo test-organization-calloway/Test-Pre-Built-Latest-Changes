@@ -1,0 +1,24 @@
+{
+  "tags": [],
+  "name": "TPB Command Template",
+  "os": "",
+  "passRule": true,
+  "ignoreWarnings": false,
+  "commands": [
+    {
+      "command": "show version",
+      "passRule": true,
+      "rules": [
+        {
+          "rule": "",
+          "eval": "contains",
+          "severity": "error"
+        }
+      ]
+    }
+  ],
+  "created": 1698096862020,
+  "createdBy": "admin@pronghorn",
+  "lastUpdated": 1717693791382,
+  "lastUpdatedBy": "admin@pronghorn"
+}
