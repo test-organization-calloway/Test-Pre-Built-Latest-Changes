@@ -90,7 +90,7 @@ jobs:
           name: artifact
       - name: Promote to IAP
         run: |
-          if [[ $PROMOTE != "False" ]]; then
+          if [[ $PROMOTE == "True" ]]; then
             if ! python3 ./scripts/promote.py ./artifact.json; then
               echo -e "\033[0;31mERROR: ***********************************************************************************"
               echo "ERROR: There was an issue promoting artifact.json to IAP."
