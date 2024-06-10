@@ -1,8 +1,8 @@
 {
   "bundleName": "@demo/pre-built-demo",
   "version": "0.0.1",
-  "fingerprint": "666710ae01d9b8610cc84bda",
-  "createdEpoch": "1718030510504",
+  "fingerprint": "666711cc01d9b8610cc84bdc",
+  "createdEpoch": "1718030796790",
   "artifacts": [
     {
       "id": "TPB OM",
@@ -36,15 +36,6 @@
       "name": "TPB Workflow",
       "type": "workflow",
       "location": "/bundles/workflows/TPB Workflow.json",
-      "properties": {
-        "entryPoint": false
-      }
-    },
-    {
-      "id": "Test Workflow",
-      "name": "Test Workflow",
-      "type": "workflow",
-      "location": "/bundles/workflows/Test Workflow.json",
       "properties": {
         "entryPoint": false
       }
